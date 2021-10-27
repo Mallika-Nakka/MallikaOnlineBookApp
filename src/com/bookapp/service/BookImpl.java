@@ -10,13 +10,11 @@ import com.bookapp.exception.AuthorNotFoundException;
 import com.bookapp.exception.CategoryNotFoundException;
 
 public class BookImpl implements BookInter {
-
-	List<Book> bookList=new ArrayList<>();
+	List<Book> bookList = new ArrayList<>();
 
 	public void addBook(Book book) {
-
 		bookList.add(book);
-		System.out.println(bookList.toString());
+		//System.out.println();
 	}
 
 	@Override
@@ -24,14 +22,13 @@ public class BookImpl implements BookInter {
 		Collections.sort(bookList, (book1, book2) -> {
 			return book1.getTitle().compareTo(book2.getTitle());
 		});
-		System.out.println("Hi");
 		System.out.println(bookList.toString());
 		return bookList;
 
 	}
 
 	@Override
-	public List<Book> getBookbyAuthor(String author ) throws AuthorNotFoundException {
+	public List<Book> getBookbyAuthor(String author) throws AuthorNotFoundException {
 		// TODO Auto-generated method stub
 
 		List<Book> bookAuthor = new ArrayList<>();
@@ -45,7 +42,7 @@ public class BookImpl implements BookInter {
 
 		}
 
-		if (bookAuthor.size()==0) {
+		if (bookAuthor.size() == 0) {
 			throw new AuthorNotFoundException("Author name not found");
 
 		}
@@ -55,18 +52,17 @@ public class BookImpl implements BookInter {
 
 	@Override
 	public List<Book> getBookbycategory(String category) throws CategoryNotFoundException {
-		
+
 		List<Book> bookCategory = new ArrayList<>();
 
 		boolean isCategoryPresent = false;
 
-		
 		for (Book book : bookList) {
-			
+
 			if ((book.getCategory().toLowerCase()).equals((category.toLowerCase()))) {
 				bookCategory.add(book);
 				isCategoryPresent = true;
-				
+
 				System.out.println(book);
 			}
 

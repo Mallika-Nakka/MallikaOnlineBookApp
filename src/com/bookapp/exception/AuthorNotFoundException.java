@@ -1,14 +1,10 @@
 package com.bookapp.exception;
 
-public class AuthorNotFoundException extends Exception{
+public class AuthorNotFoundException  extends Exception{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public AuthorNotFoundException() {
-		super();
+	public AuthorNotFoundException(String message, Throwable cause, boolean enableSuppression,
+			boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,6 +13,11 @@ public class AuthorNotFoundException extends Exception{
 		// TODO Auto-generated constructor stub
 	}
 
+	public AuthorNotFoundException() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	
-	
+
 }
