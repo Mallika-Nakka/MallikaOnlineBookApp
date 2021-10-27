@@ -35,11 +35,9 @@ public class BookImpl implements BookInter {
 		// TODO Auto-generated method stub
 
 		List<Book> bookAuthor = new ArrayList<>();
-		boolean isAuthorPresent = false;
-
 		for (Book book : bookList) {
 
-			if (author.toLowerCase().equals(book.getAuthor().toLowerCase())) {
+			if (book.getAuthor().equals(author)) {
 				bookAuthor.add(book);
 //				isAuthorPresent = true;
 				System.out.println(book);
@@ -47,7 +45,7 @@ public class BookImpl implements BookInter {
 
 		}
 
-		if (!isAuthorPresent) {
+		if (bookAuthor.size()==0) {
 			throw new AuthorNotFoundException("Author name not found");
 
 		}
@@ -65,7 +63,7 @@ public class BookImpl implements BookInter {
 		
 		for (Book book : bookList) {
 			
-			if ((category.toLowerCase()).equals((book.getCategory().toLowerCase()))) {
+			if ((book.getCategory().toLowerCase()).equals((category.toLowerCase()))) {
 				bookCategory.add(book);
 				isCategoryPresent = true;
 				

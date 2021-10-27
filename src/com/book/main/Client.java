@@ -49,6 +49,7 @@ public class Client {
 					int id=bookList.size();
 					Book book = new Book(bookTitle, authorName, bookCategory, price, id);
 					bookList.add(book);
+					bookInter.addBook(book);
 					
 				}
 				break;
